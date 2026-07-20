@@ -29,8 +29,7 @@ const posts = [
 ]
 
 const main = document.getElementById("main")
-const postLike = document.getElementById("post-like")
-const like = document.getElementById("like")
+
 
 
 function renderPost() {
@@ -55,21 +54,23 @@ function renderPost() {
                     <img id="share" class="icon" src="images/icon-dm.png" alt="The share icon">
                 </div>
 
-                <p  class="likes"><span id="like">${posts[i].likes}</span> likes</p>
+                <p   class="likes"><span class="like">${posts[i].likes}</span> likes</p>
                 <p ><span class="comment">${posts[i].username}</span> ${posts[i].comment}</p>
             </div>
         </section>
         `
     }
     main.innerHTML = postList;
+    
+
 }
 
 renderPost()
-
-main.addEventListener('click', function(event){
-    let likePlus = ""
-    if (event.target && event.target.id === "post-like") {
-        like += 1
-    }
-   like.textContent = like
-})
+    
+const postImg = document.querySelectorAll(".post-img")
+    const like = document.querySelectorAll(".like")
+    const likeCon = document.querySelectorAll(".likes")
+    postImg.addEventListener('click', function(){
+    like.textContent++
+   likeCon.textContent = like.textContent + " likes"
+    })
