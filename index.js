@@ -28,3 +28,48 @@ const posts = [
     }
 ]
 
+const main = document.getElementById("main")
+const postLike = document.getElementById("post-like")
+const like = document.getElementById("like")
+
+
+function renderPost() {
+    let postList = "" 
+    for(let i = 0; i < posts.length; i++) {
+        postList += `
+        <section>
+            <div class="section-container">
+                <div class="profile">
+                    <img class="avatar" src="${posts[i].avatar}" alt="User Avatar">
+                    <div class="profile.text">
+                        <p class="name">${posts[i].name}</p>
+                        <p class="location">${posts[i].location}</p>
+                    </div>
+                </div>
+            
+                <img id="post-like" class="post-img" src="${posts[i].post}" alt="The post image">
+                
+                <div class="icon-container">
+                    <img  class="icon" src="images/icon-heart.png" alt="The like icon">
+                    <img id="comment" class="icon" src="images/icon-comment.png" alt="The comment icon">
+                    <img id="share" class="icon" src="images/icon-dm.png" alt="The share icon">
+                </div>
+
+                <p  class="likes"><span id="like">${posts[i].likes}</span> likes</p>
+                <p ><span class="comment">${posts[i].username}</span> ${posts[i].comment}</p>
+            </div>
+        </section>
+        `
+    }
+    main.innerHTML = postList;
+}
+
+renderPost()
+
+main.addEventListener('click', function(event){
+    let likePlus = ""
+    if (event.target && event.target.id === "post-like") {
+        like += 1
+    }
+   like.textContent = like
+})

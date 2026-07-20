@@ -1,5 +1,77 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-size: 21px;
+     background-color: #EDEDED;
+}
+
+/*typography*/
+p {
+    margin-bottom: 0;
+    margin-left: 12px;
+    margin-top: 15px;
+}
+
+/* Layouts */
+header {
+    padding: 25px;
+    margin-bottom: 5px;
+    background-color: #fff;
+}
+
+
+section {
+    margin-bottom: 50px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 150px;
+}
+
+.avatar {
+    width: 70px;
+    border-radius: 100%;
+}
+
+.section-container {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 25px 0;
+    width: 600px;
+    margin: 0 auto;
+}
+
+
+.profile {
+    display: flex;
+    line-height: 9px;
+    margin-bottom: 20px;
+}
+
+.name, .likes, .comment {
+    font-weight: bold;
+}
+
+.profile .avatar {
+    margin-left: 12px;
+}
+
+.post-img {
+    width: 100%;
+}
+
+.icon-container {
+    padding-top: 20px;
+    margin: 0;
+}
+
+.icon {
+    width: 50px;
+    margin: 0 12px;
 }
 
