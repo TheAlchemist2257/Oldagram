@@ -61,16 +61,16 @@ function renderPost() {
         `
     }
     main.innerHTML = postList;
-    
-
-}
-
-renderPost()
-    
-const postImg = document.querySelectorAll(".post-img")
+    const postImg = document.querySelectorAll(".post-img")
     const like = document.querySelectorAll(".like")
     const likeCon = document.querySelectorAll(".likes")
     postImg.addEventListener('click', function(){
     like.textContent++
    likeCon.textContent = like.textContent + " likes"
-    })
+    })    
+
+}
+
+renderPost()
+    
+    
