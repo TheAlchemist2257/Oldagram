@@ -40,13 +40,13 @@ function renderPost() {
             <div class="section-container">
                 <div class="profile">
                     <img class="avatar" src="${posts[i].avatar}" alt="User Avatar">
-                    <div class="profile.text">
+                    <div class="profile-text">
                         <p class="name">${posts[i].name}</p>
                         <p class="location">${posts[i].location}</p>
                     </div>
                 </div>
             
-                <img id="post-like" class="post-img" src="${posts[i].post}" alt="The post image">
+                <img  class="post-img" src="${posts[i].post}" alt="The post image">
                 
                 <div class="icon-container">
                     <img  class="icon" src="images/icon-heart.png" alt="The like icon">
@@ -61,16 +61,20 @@ function renderPost() {
         `
     }
     main.innerHTML = postList;
-    const postImg = document.querySelectorAll(".post-img")
-    const like = document.querySelectorAll(".like")
-    const likeCon = document.querySelectorAll(".likes")
-    postImg.addEventListener('click', function(){
-    like.textContent++
-   likeCon.textContent = like.textContent + " likes"
-    })    
+    const postImg = document.querySelectorAll('.post-img')
+    const like = document.querySelectorAll('.likes')
+
+    postImg.forEach((Img, i) => {
+        Img.addEventListener('dblclick', function() {
+            const current = parseInt(like[i].textContent, 10)
+            const newCurrent = current + 1
+            like[i].textContent = newCurrent + ' likes'
+        })
+    })
 
 }
 
 renderPost()
+
     
     
